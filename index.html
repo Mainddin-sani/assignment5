@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugry Moster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+        <img src="images/logo-hungry.png" alt="images">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse me-auto" id="navbarSupportedContent">
+      <ul class="navbar-nav  ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="link" href="#">Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="link" href="#">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <!-- navbar -->
+
+    <!-- search bar -->
+    <section class="ic-searchbar mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 m-auto">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="search_name" placeholder="Search for Meal...">
+                        <img src="images/search.svg" alt="icon">
+                        <button id="search_btn">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- search bar -->
+
+    <!-- not found -->
+    <div id="error_massage"></div>
+    <!-- not found -->
+
+    <!-- search result -->
+    <section class="search-result">
+        <div class="container-lg">
+            <div class="row">
+              <div class="col-lg-6 m-auto">
+                <div id="meals_details" class="mb-5">
+                    <!-- <img src="images/bg.png" alt="images"> -->
+                    <!-- <h3>name</h3>
+                    <h6>Ingredients</h6>
+                    <ul>
+                      <li><img src="images/check.png" alt="">1 cup whole raw almonds</li>
+                    </ul> -->
+                </div>
+              </div>
+            </div>
+            <div class="row" id="items_result">
+               
+            </div>
+        </div>
+    </section>
+    <!-- search result -->
+
+
+
+    <!-- js -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
