@@ -10,7 +10,6 @@ getDocumentId('search_btn').addEventListener('click', () => {
 // // get API response 
 const getApiResult = async () => {
     let searchInput = getDocumentId('search_name').value;
-    console.log(searchInput)
     if(searchInput != '') {
         try{
             const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`);
@@ -21,32 +20,33 @@ const getApiResult = async () => {
             console.log(err);
         }
        let mainDiv = getDocumentId('items_result');
-       if(data!=null){
-        data.forEach(element => {
-           
-            let createDiv = document.createElement('div');
-            createDiv.className = "col-lg-3"
-            let mealsItems = `
-            <div class="result-items text-center" onclick=mealDisplay('${element['strMeal']}')>
-                <img src="${element['strMealThumb']}" class="img-fluid" alt="images">
-                <h5>${element['strMeal']}</h5>
-            </div>
-            `
-            createDiv.innerHTML = mealsItems;
-            mainDiv.appendChild(createDiv);
-           
-        });
-       }else{
-           alert('not found')
-       }
+        if(data!=null){
+            data.forEach(element => {
+                let createDiv = document.createElement('div');
+                createDiv.className = "col-lg-3"
+                let mealsItems = `
+                <div class="result-items text-center" onclick=mealDisplay('${element['strMeal']}')>
+                    <img src="${element['strMealThumb']}" class="img-fluid" alt="images">
+                    <h5>${element['strMeal']}</h5>
+                </div>
+                `
+                createDiv.innerHTML = mealsItems;
+                mainDiv.appendChild(createDiv);
+            
+            });
+            }else{
+                alert('not found')
+            }
       
     }else{
-        alert('not')
+        alert('not found')
     }
     
 }
 
 
+
+// The meals Details
 const mealDisplay = name => {
     try {
         const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`
@@ -56,7 +56,6 @@ const mealDisplay = name => {
     }catch {
         console.log(err);
     }
-   
 }
 
 const mealIngredients = ingredients => {
